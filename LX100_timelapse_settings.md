@@ -19,3 +19,4 @@ To set aperture:
 3. Note the aperture setting and set it manually
 4. Focus will also be locked
 
+Settings based on [this YouTube video](https://www.youtube.com/watch?v=D6U27JZD0Lc)
