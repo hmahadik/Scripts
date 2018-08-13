@@ -1,0 +1,66 @@
+/* Sans-serif Fonts */
+
+@font-face {font-family: "Arial";           src: local("sans-serif");}
+@font-face {font-family: "Helvetica";       src: local("sans-serif");}
+@font-face {font-family: "Helvetica Neue";  src: local("sans-serif");}
+@font-face {font-family: "Sans";            src: local("sans-serif");}
+@font-face {font-family: "Serif";           src: local("sans-serif");}
+@font-face {font-family: "Open Sans";       src: local("sans-serif");}
+@font-face {font-family: "Palatino";        src: local("sans-serif");}
+@font-face {font-family: "Proxima Nova";    src: local("sans-serif");}
+@font-face {font-family: "proxima-nova";    src: local("sans-serif");}
+@font-face {font-family: "Ubuntu";          src: local("sans-serif");}
+@font-face {font-family: "Times New Roman"; src: local("sans-serif");}
+@font-face {font-family: "Cantarell";       src: local("sans-serif");}
+@font-face {font-family: "Amazon Ember";    src: local("sans-serif");}
+@font-face {font-family: "Roboto";          src: local("sans-serif");}
+@font-face {font-family: "Serif";           src: local("sans-serif");}
+@font-face {font-family: "Helvetica";       src: local("sans-serif");}
+@font-face {font-family: "Calibri";         src: local("sans-serif");}
+@font-face {font-family: "Cambria";         src: local("sans-serif");}
+@font-face {font-family: "Trebuchet MS";    src: local("sans-serif");}
+@font-face {font-family: "Trebuchet";       src: local("sans-serif");}
+@font-face {font-family: "Times";           src: local("sans-serif");}
+@font-face {font-family: "Times New Roman"; src: local("sans-serif");}
+@font-face {font-family: "Verdana";         src: local("sans-serif");}
+@font-face {font-family: "Tahoma";          src: local("sans-serif");}
+@font-face {font-family: "Garamond";        src: local("sans-serif");}
+@font-face {font-family: "Georgia";         src: local("sans-serif");}
+@font-face {font-family: "Liberation Sans"; src: local("sans-serif");}
+@font-face {font-family: "FreeSans";        src: local("sans-serif");}
+@font-face {font-family: "Futura";          src: local("sans-serif");}
+@font-face {font-family: "Pt Sans";         src: local("sans-serif");}
+@font-face {font-family: "Pt Serif";        src: local("sans-serif");}
+
+/* Monospace Fonts */
+
+@font-face {font-family: "Liberation Mono"; src: local("monospace");}
+@font-face {font-family: "Courier";         src: local("monospace");}
+@font-face {font-family: "Lucida Console";  src: local("monospace");}
+@font-face {font-family: "Consolas";        src: local("monospace");}
+@font-face {font-family: "Courier New";     src: local("monospace");}
+
+/* Change the src in the following two lines */
+@font-face {font-family: sans-serif;        src: local("SF UI Display");}
+@font-face {font-family: monospace;         src: local("SF Mono");}
+
+/*:not(pre):not(*code*):not(textarea):not(tt):not(kbd):not(samp):not(var) {font-family: "SF UI Display"!important
+}
+
+pre,
+code,
+textarea,
+tt,
+kbd,
+samp,
+var {font-family: "SF Mono"!important
+}
+
+pre *,
+code *,
+textarea *,
+tt *,
+kbd *,
+samp *,
+var * {font-family: "SF Mono"!important
+}*/
