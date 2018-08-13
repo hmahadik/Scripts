@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<playlist xmlns="http://xspf.org/ns/0/" xmlns:vlc="http://www.videolan.org/vlc/playlist/ns/0/" version="1">
+	<title>DVB Playlist</title>
+	<creator>w_scan-20170107</creator>
+	<info>http://wirbel.htpc-forum.de</info>
+	<trackList>
+		<track>
+			<title>0001. CFTO</title>
+			<location>atsc://frequency=189000000</location>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:option>dvb-modulation=8VSB</vlc:option>
+				<vlc:id>2</vlc:id>
+				<vlc:option>program=1</vlc:option>
+			</extension>
+		</track>
+		<track>
+			<title>0002. TVO</title>
+			<location>atsc://frequency=503000000</location>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:option>dvb-modulation=8VSB</vlc:option>
+				<vlc:id>3</vlc:id>
+				<vlc:option>program=1</vlc:option>
+			</extension>
+		</track>
+		<track>
+			<title>0003. TORONTO CBLT-DT</title>
+			<location>atsc://frequency=509000000</location>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:option>dvb-modulation=8VSB</vlc:option>
+				<vlc:id>4</vlc:id>
+				<vlc:option>program=3</vlc:option>
+			</extension>
+		</track>
+		<track>
+			<title>0004. ONTARIO CBLFT-DT</title>
+			<location>atsc://frequency=539000000</location>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:option>dvb-modulation=8VSB</vlc:option>
+				<vlc:id>5</vlc:id>
+				<vlc:option>program=3</vlc:option>
+			</extension>
+		</track>
+		<track>
+			<title>0005. CJMT</title>
+			<location>atsc://frequency=629000000</location>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:option>dvb-modulation=8VSB</vlc:option>
+				<vlc:id>6</vlc:id>
+				<vlc:option>program=3</vlc:option>
+			</extension>
+		</track>
+		<track>
+			<title>0006. CIII</title>
+			<location>atsc://frequency=635000000</location>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:option>dvb-modulation=8VSB</vlc:option>
+				<vlc:id>7</vlc:id>
+				<vlc:option>program=1</vlc:option>
+			</extension>
+		</track>
+		<track>
+			<title>0007. CITYTV</title>
+			<location>atsc://frequency=653000000</location>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:option>dvb-modulation=8VSB</vlc:option>
+				<vlc:id>8</vlc:id>
+				<vlc:option>program=2</vlc:option>
+			</extension>
+		</track>
+		<track>
+			<title>0008. CFMT</title>
+			<location>atsc://frequency=671000000</location>
+			<extension application="http://www.videolan.org/vlc/playlist/0">
+				<vlc:option>dvb-modulation=8VSB</vlc:option>
+				<vlc:id>9</vlc:id>
+				<vlc:option>program=2</vlc:option>
+			</extension>
+		</track>
+	</trackList>
+</playlist>
