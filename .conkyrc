@@ -1,0 +1,147 @@
+-- vim: ts=4 sw=4 noet ai cindent syntax=lua
+--[[
+Conky, a system monitor, based on torsmo
+
+Any original torsmo code is licensed under the BSD license
+
+All code written since the fork of torsmo is licensed under the GPL
+
+Please see COPYING for details
+
+Copyright (c) 2004, Hannu Saransaari and Lauri Hakkarainen
+Copyright (c) 2005-2012 Brenden Matthews, Philip Kovacs, et. al. (see AUTHORS)
+All rights reserved.
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+]]
+
+conky.config = {
+    alignment = 'top_left',
+    
+    gap_x = 20,
+    gap_y = 0,
+    minimum_width = 300,
+    minimum_height = 5000,
+    border_width = 5,
+    background = true,
+    
+    -- pre-defined colors: red,green,yellow,blue,magenta,cyan,black,white
+    
+    own_window = true,
+    own_window_class = 'Conky',
+    own_window_type = 'desktop',
+    own_window_colour = 'black', -- background color
+    own_window_argb_visual = true,
+    own_window_argb_value = 175, -- 0 (transparent) to 255 (opaque)
+    
+    default_color = 'white',
+    default_outline_color = 'white',
+    default_shade_color = 'white',
+    default_bar_height = 20,
+
+    draw_borders = false,
+    draw_outline = false,
+    draw_shades = false,
+    draw_graph_borders = false,
+    
+    use_xft = true,
+    font = 'IBM Plex Mono:size=11',
+
+    border_inner_margin = 10,
+    border_outer_margin = 10,
+    stippled_borders = 2,
+    
+    net_avg_samples = 2,
+    cpu_avg_samples = 2,
+    update_interval = .05,
+    
+    no_buffers = true,
+    double_buffer = true,
+    out_to_console = false,
+    out_to_stderr = false,
+    extra_newline = true,
+
+    uppercase = true,
+    use_spacer = 'none',
+    show_graph_scale = false,
+    show_graph_range = false,
+
+    top_name_width = 10
+}
+
+
+conky.text = [[
+${voffset 100}
+${alignc}${color yellow}$nodename
+${voffset 500}
+${alignc}${color}${time %r}
+${alignc}${color}${time %A %B %d %Y}
+${color white}
+Uptime$alignr$uptime
+Kernel$alignr$kernel
+
+${color}CPU$alignr$color${freq_g cpu0}GHz ${acpitemp}°C ${cpu cpu0}%
+${color yellow}${cpubar}
+
+${color}GPU$alignr$color${exec ~/.scripts/getGpuUtil.sh}%
+${color yellow}${execbar ~/.scripts/getGpuUtil.sh}
+
+${color}Memory$color$alignr $mem / $memmax
+${color yellow}${membar}
+
+${color}Disk$alignr$color ${fs_used /} / ${fs_size /}
+${color yellow}${fs_bar /}${color}
+
+Trends
+${hr 2}
+$alignr CPU
+${voffset 10}${cpugraph 50,0 FF0000 FFFF00 -l}
+${voffset 15}$alignr RAM
+${voffset 10}${memgraph 50,0 FF0000 FFFF00 -l}
+${voffset 15}$alignr I/O
+${voffset 10}${diskiograph /dev/nvme0n1p2 50,0 FF0000 FFFF00 -l}
+
+${color}Networking
+${hr 2}
+${voffset 0}${color} Public$alignr${color}${execi 3600 wget -qO - ifconfig.co}
+${color} Local$alignr${color}${addr enp0s31f6}
+${voffset 0}${color} Up Speed${color} $alignr ${upspeed enp0s31f6}/s
+${voffset 10} ${upspeedgraph enp0s31f6 50,0 FF0000 FFFF00 -l}
+${voffset 25}${color} Down Speed${color} $alignr ${downspeed enp0s31f6}/s
+${voffset 10} ${downspeedgraph enp0s31f6 50,0 FF0000 FFFF00 -l}
+
+
+${color}Process        PID   CPU%   MEM%
+${hr 2}
+${color orange} ${top name 1} ${top pid 1} ${top cpu 1} ${top mem 1}
+${color yellow} ${top name 2} ${top pid 2} ${top cpu 2} ${top mem 2}
+${color white} ${top name 3} ${top pid 3} ${top cpu 3} ${top mem 3}
+${color white} ${top name 4} ${top pid 4} ${top cpu 4} ${top mem 4}
+${color white} ${top name 5} ${top pid 5} ${top cpu 5} ${top mem 5}
+${color white} ${top name 6} ${top pid 6} ${top cpu 6} ${top mem 6}
+${color white} ${top name 7} ${top pid 7} ${top cpu 7} ${top mem 7}
+${color white} ${top name 8} ${top pid 8} ${top cpu 8} ${top mem 8}
+${color white} ${top name 9} ${top pid 9} ${top cpu 9} ${top mem 9}
+${color white} ${top name 10} ${top pid 10} ${top cpu 10} ${top mem 10}
+${hr 2}
+
+
+
+
+
+
+
+
+
+
+]]
