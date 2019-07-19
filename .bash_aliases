@@ -1,0 +1,6 @@
+alias sshmv="ssh -X machinevision@192.168.100.143"
+alias ivyking="ssh -X harshad@ivyking.arcturusnetworks.com"
+alias ivymike="ssh -X harshad@ivymike.arcturusnetworks.com"
+alias sshmx="ssh root@192.168.100.114"
+alias ccat="pygmentize -O style=friendly"
+alias aty="cd ~/Developer/yocto/fsl-arm-yocto-bsp/ && source setup-environment bld-xwayland"
