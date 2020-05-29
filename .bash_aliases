@@ -10,7 +10,10 @@ alias vae='cd ~/Developer/yocto/fsl-arm-yocto-bsp/sources/meta-arc-vision/recipe
 alias yocto='docker run -it -v ~/Developer:/home/harshad/Developer -v /opt/fsl-imx-xwayland:/opt/fsl-imx-xwayland -w /home/harshad/Developer/yocto/fsl-arm-yocto-bsp -u harshad yocto-imx bash'
 
 function setuiscale() {
+	xrandr --output DP-0 --scale $1x$1
 	xrandr --output DisplayPort-0 --scale $1x$1
+	xrandr --output HDMI-0 --scale $1x$1
+	gsettings set org.gnome.settings-daemon.plugins.xsettings overrides "[{'Gdk/WindowScalingFactor', <2>}]"
 }
 
 function setscale() {
