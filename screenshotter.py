@@ -3,21 +3,27 @@ try:
     from PIL import ImageGrab as ScreenshotGrabber
 except:
     import pyscreenshot as ScreenshotGrabber
+
 import datetime
 import time
 import os
+import traceback
 
-os.chdir(os.path.expanduser("~/Developer/Screenshots"))
+rootDir = os.path.expanduser("~/Developer/Screenshots")
+os.makedirs(rootDir, exist_ok=True)
+os.chdir(rootDir)
 
 while True:
   try:
     image = ScreenshotGrabber.grab()
-    filename = f'{str(datetime.datetime.now()).replace(":","-")}.jpg'
-    image.save(filename, quality=25)
-    print(f"[{str(datetime.datetime.now())}] Saved {filename}")
+    now = datetime.datetime.now()
+    folder = os.path.join(f"{now.year}", f"{now:%b}", f"{now:%d}-{now:%a}")
+    os.makedirs(folder, exist_ok=True)
+    filename = f'{now:%I}:{now:%M}{now:%p}.jpg'
+    filepath = os.path.abspath(os.path.join(folder, filename))
+    image.save(filepath, quality=25)
+    print(f"[{str(datetime.datetime.now())}] Saved {filepath}")
   except:
-  	print(f"[{str(datetime.datetime.now())}] Exception")
-  	import traceback
-  	traceback.format_exc()
+    print(f"[{str(datetime.datetime.now())}] Exception: {traceback.format_exc()}")
   finally:
-  	time.sleep(60)
+    time.sleep(60)
