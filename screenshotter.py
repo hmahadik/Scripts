@@ -19,7 +19,7 @@ while True:
     now = datetime.datetime.now()
     folder = os.path.join(f"{now.year}", f"{now:%b}", f"{now:%d}-{now:%a}")
     os.makedirs(folder, exist_ok=True)
-    filename = f'{now:%I}:{now:%M}{now:%p}.jpg'
+    filename = f'{now:%I}-{now:%M}{now:%p}.jpg'
     filepath = os.path.abspath(os.path.join(folder, filename))
     image.save(filepath, quality=25)
     print(f"[{str(datetime.datetime.now())}] Saved {filepath}")
