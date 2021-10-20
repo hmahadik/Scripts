@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 try:
     from PIL import ImageGrab as ScreenshotGrabber
 except:
@@ -16,6 +16,7 @@ os.chdir(rootDir)
 while True:
   try:
     image = ScreenshotGrabber.grab()
+    image = image.convert("RGB")
     now = datetime.datetime.now()
     folder = os.path.join(f"{now.year}", f"{now:%b}", f"{now:%d}-{now:%a}")
     os.makedirs(folder, exist_ok=True)
