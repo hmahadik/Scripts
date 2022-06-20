@@ -1,6 +1,6 @@
 # borrowed from https://www.si.edu/tbma/resource/method-maintaining-bashrc-file-across-multiple-workstations-using-homebrew-and-github
 alias ll='ls -lahG'
-alias ls='ls -1'
+alias ls='ls -1h --color'
 alias mv='mv -iv'
 alias cp='cp -iv'
 alias rm='rm -iv'
