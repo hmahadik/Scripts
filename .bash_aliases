@@ -1,4 +1,11 @@
-alias l1="ls -1a"
+# borrowed from https://www.si.edu/tbma/resource/method-maintaining-bashrc-file-across-multiple-workstations-using-homebrew-and-github
+alias ll='ls -lahG'
+alias ls='ls -1'
+alias mv='mv -iv'
+alias cp='cp -iv'
+alias rm='rm -iv'
+alias mkdir='mkdir -p'
+
 alias dc="docker-compose"
 alias ccat="pygmentize -g -O style=solarized-dark"
 alias df="df -h"
