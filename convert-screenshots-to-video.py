@@ -5,39 +5,56 @@ try:
 
 except:
 	print("Usage: python3 convert-screenshots-to-video.py <folder>")
-	print("Example: python3 convert-screenshots-to-video.py /home/harshad/Developer/Screenshots/2022/Sep/19-Mon")
+	print("Example: python3 convert-screenshots-to-video.py /home/harshad/Developer/Screenshots/")
 	sys.exit(0)
 
-timeStart = time.time()
+def process_folder(folder):
 
-try:
-	paths = sorted(filter(lambda p: p.suffix == ".jpg", root.iterdir()), key=os.path.getmtime)
+	print(f"Processing folder: {folder}")
 
-	fps, width, height = (30.0, 1920, 1080)
-	videoOutputPath = root.parent.joinpath(f"{root.name}.mp4")
+	timeStart = time.time()
 
-	print(f"Writing video to {videoOutputPath}")
-
-	writer = cv2.VideoWriter(str(videoOutputPath),
-		cv2.VideoWriter_fourcc(*'mp4v'), fps, (width, height))
-
-	for path in tqdm.tqdm(paths):
-		# print(f"Processing {path}", end="\r")
-		frame = cv2.resize(cv2.imread(str(path)), (width,height), interpolation=cv2.INTER_AREA)
-		# cv2.imshow("output", frame)
-		# keyPressed = cv2.waitKey(1)
-		# if keyPressed > 0:
-		# 	print("exiting")
-		# 	break
-		writer.write(frame)
-
-except Exception as e:
-	print(e)
-
-finally:
 	try:
-		writer.release()
-	except:
-		pass
+		paths = sorted(filter(lambda p: p.suffix == ".jpg", folder.iterdir()), key=os.path.getmtime)
 
-print(f"Video saved as {videoOutputPath}. Took {round((time.time()-timeStart)/60.0, 1)} minutes.")
+		if not (len(paths) > 0):
+			return
+
+		fps, width, height = (30.0, 1920, 1080)
+		videoOutputPath = folder.parent.joinpath(f"{folder.name}.mp4")
+
+		if videoOutputPath.exists():
+			print(f"Video '{videoOutputPath}' already exists, not overwriting.")
+			return
+
+		print(f"Writing video to {videoOutputPath}")
+
+		writer = cv2.VideoWriter(str(videoOutputPath),
+			cv2.VideoWriter_fourcc(*'mp4v'), fps, (width, height))
+
+		for path in tqdm.tqdm(paths):
+			frame = cv2.resize(cv2.imread(str(path)), (width,height), interpolation=cv2.INTER_AREA)
+			writer.write(frame)
+
+	except Exception as e:
+		print(e)
+
+	finally:
+		try:
+			writer.release()
+		except:
+			pass
+
+	print(f"Video saved as {videoOutputPath}. Took {round((time.time()-timeStart)/60.0, 1)} minutes.")
+
+def process_nested_folders(folder):
+	nested_folders = sorted(filter(lambda p: p.is_dir(), folder.iterdir()), key=os.path.getmtime)
+	if len(nested_folders) == 0:
+		process_folder(folder)
+		return
+
+	print(f"Processing nested folder {folder}")
+	for nested_folder in nested_folders:
+		process_nested_folders(nested_folder)
+
+process_nested_folders(root)
