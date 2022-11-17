@@ -117,3 +117,6 @@ if ! shopt -oq posix; then
 fi
 
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
+# allow tab completion of filepaths after equal sign in arguments (./a.out --filepath=<tab><tab>) 
+shopt -u progcomp
