@@ -118,5 +118,6 @@ fi
 
 PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 
+# Disabling this for now since it also disables bash tab completion for arguments (e.g. docker start <tab>)
 # allow tab completion of filepaths after equal sign in arguments (./a.out --filepath=<tab><tab>) 
-shopt -u progcomp
+# shopt -u progcomp
